@@ -13,12 +13,12 @@ class _LoginScreenState extends State<LoginScreen> {
         color: Color(0xFF8DD3F7),
         width: double.infinity,
         padding: EdgeInsets.symmetric(horizontal: 30),
-        child: SingleChildScrollView(  // เพิ่มตัวนี้กัน Overflow
+        child: SingleChildScrollView(  // นี่คือตัวที่ทำให้เลื่อนได้
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              // Logo เปลี่ยนเป็นรูป
+              //ทำให้ Logo แสดงหน่อยเพราะชั้นเพิ่มทุกอย่างแต่มันไม่แสดงรูปให้เบยย เศร้าอะฮือๆ 
               Container(
                 width: 150,
                 height: 150,
@@ -28,21 +28,23 @@ class _LoginScreenState extends State<LoginScreen> {
                   borderRadius: BorderRadius.circular(10),
                 ),
                 child: Image.asset(
-                  "assets/image/logofh.png",
+                  "assets/image/logofh.png", //รูปภาพที่ไม่ขึ้น
                   fit: BoxFit.cover,
                 ),
               ),
 
               Text(
-                "Log in",
+                "Log in", //คำ login ล่าง logo
                 style: TextStyle(
                   color: Color(0xFF0A496A),
                   fontSize: 24,
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              SizedBox(height: 30),
+              
+              SizedBox(height: 25),
 
+              //ช่องสำหรับกรอก email
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -55,7 +57,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                   SizedBox(height: 5),
                   Container(
-                    width: double.infinity, // แก้ width ตรงนี้
+                    width: double.infinity,  //ขนาดของช่องที่พิมพ์ email ถ้าไม่พอใจเปลี่ยนได้แต่บอกด้วย
                     decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(5),
@@ -75,6 +77,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
               SizedBox(height: 15),
 
+              //สำหรับกรอก password 
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -87,7 +90,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                   SizedBox(height: 5),
                   Container(
-                    width: double.infinity, // แก้ width ตรงนี้
+                    width: double.infinity, //ขนาดของช่องที่พิมพ์ password ถ้าไม่พอใจเปลี่ยนได้แต่บอกด้วย
                     decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(5),
@@ -109,10 +112,13 @@ class _LoginScreenState extends State<LoginScreen> {
               SizedBox(height: 40),
 
               Container(
-                width: double.infinity, // แก้ width ตรงนี้
+                width: double.infinity, //ขนาดของปุ่ม login ถ้าไม่พอใจเปลี่ยนได้แต่บอกด้วย
                 child: ElevatedButton(
                   onPressed: () {
                     // กด login แล้วให้ไปไหน
+
+
+
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Color(0xFF0A496A),
@@ -137,10 +143,13 @@ class _LoginScreenState extends State<LoginScreen> {
 
               // Register button
               Container(
-                width: double.infinity,
+                width: double.infinity, //ขนาดของปุ่ม Register ถ้าไม่พอใจเปลี่ยนได้แต่บอกด้วย
                 child: ElevatedButton(
                   onPressed: () {
                     // กด register แล้วจะให้ไปไหน
+
+
+
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Color(0xFF5799BD),
@@ -159,7 +168,8 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
               ),
 
-              SizedBox(height: 50), // เผื่อระยะขอบล่าง
+              SizedBox(height: 50), 
+
             ],
           ),
         ),
