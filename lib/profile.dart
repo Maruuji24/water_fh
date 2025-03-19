@@ -19,12 +19,12 @@ class Profile extends StatefulWidget {
         context,
         MaterialPageRoute(builder: (context) => Reminder()),
       );
-    } else if(index==0){
+    } else if(index == 0){
       Navigator.push(
         context,
         MaterialPageRoute(builder: (context) => HomePage()),
       );
-    } else if(index==0){
+    } else if(index == 0){
       Navigator.push(
         context,
         MaterialPageRoute(builder: (context) => Tips()),
@@ -56,8 +56,7 @@ class Profile extends StatefulWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                    builder: (context) =>
-                        Profile()), 
+                    builder: (context) => Profile()), 
               );
             },
           ),
@@ -128,7 +127,7 @@ class Profile extends StatefulWidget {
       ),
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: Colors.lightBlue[200],
-        selectedItemColor: Colors.black,
+        selectedItemColor: Colors.black54,
         unselectedItemColor: Colors.black54,
         currentIndex: _selectedIndex,
         onTap: _onItemTapped,
