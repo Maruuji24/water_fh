@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'home.dart';
 
 class LoginScreen extends StatefulWidget {
   @override
@@ -146,10 +147,10 @@ class _LoginScreenState extends State<LoginScreen> {
                 width: double.infinity, //ขนาดของปุ่ม Register ถ้าไม่พอใจเปลี่ยนได้แต่บอกด้วย
                 child: ElevatedButton(
                   onPressed: () {
-                    // กด register แล้วจะให้ไปไหน
-
-
-
+                    Navigator.push(
+                      context,
+                        MaterialPageRoute(builder: (context) => HomePage()),
+                    );
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Color(0xFF5799BD),
