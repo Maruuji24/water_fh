@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'reminder.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key); // เพิ่ม Key? key
@@ -21,9 +22,16 @@ class _HomePageState extends State<HomePage> {
   }
 
   void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
+    if (index == 1) {
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => Reminder()),
+      );
+    } else {
+      setState(() {
+        _selectedIndex = index;
+      });
+    }
   }
 
   @override
@@ -34,7 +42,8 @@ class _HomePageState extends State<HomePage> {
         elevation: 0,
         title: Row(
           children: [
-            Image.asset("assets/image/logofh.png", height: 60), // เพิ่ม Image.asset แทน Text
+            Image.asset("assets/image/logofh.png",
+                height: 60), // เพิ่ม Image.asset แทน Text
           ],
         ),
         actions: [
@@ -82,11 +91,13 @@ class _HomePageState extends State<HomePage> {
                   children: [
                     Text(
                       "${_currentIntake.toInt()}/15000 ml",
-                      style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                      style:
+                          TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
                     ),
                     Text(
                       "Daily Drink Target",
-                      style: TextStyle(fontSize: 14, fontWeight: FontWeight.w500),
+                      style:
+                          TextStyle(fontSize: 14, fontWeight: FontWeight.w500),
                     ),
                   ],
                 ),
@@ -102,7 +113,8 @@ class _HomePageState extends State<HomePage> {
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.blue[300],
                 foregroundColor: Colors.white,
-                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12)),
                 padding: EdgeInsets.symmetric(horizontal: 20, vertical: 12),
               ),
             ),
@@ -120,12 +132,15 @@ class _HomePageState extends State<HomePage> {
 
             // รายการบันทึก
             Card(
-              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10)),
               child: ListTile(
                 leading: Icon(Icons.access_time, color: Colors.blue),
                 title: Text("07:00 am"),
                 subtitle: Text("Next time"),
-                trailing: Text("300 ml", style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
+                trailing: Text("300 ml",
+                    style:
+                        TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
               ),
             ),
           ],
