@@ -12,7 +12,7 @@ class Reminder extends StatefulWidget {
 
 class _ReminderScreenState extends State<Reminder> {
   List<Map<String, dynamic>> reminders = [];
-  int _selectedIndex = 0;
+  int _selectedIndex = 1;
 
   final List<int> waterAmounts = [50, 100, 200, 250, 300, 500, 750, 1000];
 
@@ -97,7 +97,7 @@ class _ReminderScreenState extends State<Reminder> {
   }
 
   void _onItemTapped(int index) {
-    if(index==0){
+    if(index == 0){
       Navigator.push(
         context,
         MaterialPageRoute(builder: (context) => HomePage()),
@@ -107,7 +107,7 @@ class _ReminderScreenState extends State<Reminder> {
         context,
         MaterialPageRoute(builder: (context) => Reminder()),
       );
-    } else if(index==2){
+    } else if(index == 2){
       Navigator.push(
         context,
         MaterialPageRoute(builder: (context) => Tips()),

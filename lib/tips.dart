@@ -13,9 +13,9 @@ class Tips extends StatefulWidget {
 
 class _TipsScreen extends State<Tips> {
 int _selectedIndex = 2;
-
+  // ส่วนของการสร้างส้นทาง //
   void _onItemTapped(int index) {
-    if(index==0){
+    if(index == 0){
       Navigator.push(
         context,
         MaterialPageRoute(builder: (context) => HomePage()),
@@ -25,7 +25,7 @@ int _selectedIndex = 2;
         context,
         MaterialPageRoute(builder: (context) => Reminder()),
       );
-    } else if(index==2){
+    } else if(index == 2){
       Navigator.push(
         context,
         MaterialPageRoute(builder: (context) => Tips()),
@@ -47,7 +47,7 @@ int _selectedIndex = 2;
         title: Row(
           children: [
             Image.asset("assets/image/logofh.png",
-                height: 60), // เพิ่ม Image.asset แทน Text
+                height: 60),
           ],
         ),
         actions: [
@@ -62,6 +62,8 @@ int _selectedIndex = 2;
           ),
         ],
       ),
+
+      // ส่วนของแถบเครื่องมือข้างล่าง 
       body: TipsContent(),
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: Colors.lightBlue[200],
@@ -94,6 +96,8 @@ class TipsContent extends StatelessWidget {
               fontWeight: FontWeight.bold,
             ),
           ),
+
+          // ข้อมูลในกล่องข้อความ
           SizedBox(height: 16),
           ExpandableTipCard(
             title: 'ทำไมเราดื่มน้ำให้ครบ 8 แก้ว',

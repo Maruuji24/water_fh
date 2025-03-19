@@ -24,7 +24,7 @@ class _HomePageState extends State<HomePage> {
   }
 
   void _onItemTapped(int index) {
-    if(index==0){
+    if(index == 0){
       Navigator.push(
         context,
         MaterialPageRoute(builder: (context) => HomePage()),
@@ -34,7 +34,7 @@ class _HomePageState extends State<HomePage> {
         context,
         MaterialPageRoute(builder: (context) => Reminder()),
       );
-    } else if(index==2){
+    } else if(index == 2){
       Navigator.push(
         context,
         MaterialPageRoute(builder: (context) => Tips()),

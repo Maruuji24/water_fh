@@ -14,17 +14,17 @@ class Profile extends StatefulWidget {
     int _selectedIndex = 0;
 
   void _onItemTapped(int index) {
-    if(index==0){
-      Navigator.push(
-        context,
-        MaterialPageRoute(builder: (context) => HomePage()),
-      );
-    } else if (index == 1) {
+    if (index == 1) {
       Navigator.push(
         context,
         MaterialPageRoute(builder: (context) => Reminder()),
       );
-    } else if(index==2){
+    } else if(index==0){
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => HomePage()),
+      );
+    } else if(index==0){
       Navigator.push(
         context,
         MaterialPageRoute(builder: (context) => Tips()),
