@@ -12,7 +12,7 @@ class _ReminderScreenState extends State<Reminder> {
   List<Map<String, dynamic>> reminders = [];
   int _selectedIndex = 0;
 
-  final List<int> waterAmounts = [250, 500, 750, 1000];
+  final List<int> waterAmounts = [50, 100, 200, 250, 300, 500, 750, 1000];
 
   Future<void> _addOrEditReminder({int? index}) async {
     TimeOfDay initialTime =
