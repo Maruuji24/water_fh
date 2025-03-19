@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:water_fh/profile.dart';
 import 'reminder.dart';
 
 class HomePage extends StatefulWidget {
@@ -38,6 +39,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false, // ปิดปุ่ม back
         backgroundColor: Colors.lightBlue[200],
         elevation: 0,
         title: Row(
@@ -49,7 +51,12 @@ class _HomePageState extends State<HomePage> {
         actions: [
           IconButton(
             icon: Icon(Icons.account_circle, color: Colors.black),
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => Profile()),
+              );
+            },
           ),
         ],
       ),

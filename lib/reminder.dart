@@ -28,6 +28,7 @@ class _ReminderScreenState extends State<Reminder> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false, // ปิดปุ่ม back
         backgroundColor: Colors.lightBlue[200],
         elevation: 0,
         title: Row(
