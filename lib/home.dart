@@ -61,7 +61,7 @@ class _HomePageState extends State<HomePage> {
         ),
         actions: [
           IconButton(
-            icon: Icon(Icons.account_circle, color: Colors.black),
+            icon: Icon(Icons.account_circle, color: Colors.black54),
             onPressed: () {
               Navigator.push(
                 context,
