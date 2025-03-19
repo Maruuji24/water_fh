@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:water_fh/home.dart';
+import 'package:water_fh/tips.dart';
+import 'package:water_fh/profile.dart';
 
 class Reminder extends StatefulWidget {
   const Reminder({super.key});
@@ -95,10 +97,20 @@ class _ReminderScreenState extends State<Reminder> {
   }
 
   void _onItemTapped(int index) {
-    if (index == 0) {
+    if(index==0){
       Navigator.push(
         context,
         MaterialPageRoute(builder: (context) => HomePage()),
+      );
+    } else if (index == 1) {
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => Reminder()),
+      );
+    } else if(index==2){
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => Tips()),
       );
     } else {
       setState(() {
@@ -123,7 +135,14 @@ class _ReminderScreenState extends State<Reminder> {
         actions: [
           IconButton(
             icon: Icon(Icons.account_circle, color: Colors.black),
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) =>
+                        Profile()), 
+              );
+            },
           ),
         ],
       ),

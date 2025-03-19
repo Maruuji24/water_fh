@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:water_fh/home.dart';
 import 'package:water_fh/reminder.dart';
+import 'package:water_fh/tips.dart';
 
 class Profile extends StatefulWidget {
   const Profile({super.key});
@@ -13,18 +14,22 @@ class Profile extends StatefulWidget {
     int _selectedIndex = 0;
 
   void _onItemTapped(int index) {
-    if (index == 1) {
-      Navigator.push(
-        context,
-        MaterialPageRoute(builder: (context) => Reminder()),
-      );
-    } else if(index==0){
+    if(index==0){
       Navigator.push(
         context,
         MaterialPageRoute(builder: (context) => HomePage()),
       );
-    }
-    else {
+    } else if (index == 1) {
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => Reminder()),
+      );
+    } else if(index==2){
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => Tips()),
+      );
+    } else {
       setState(() {
         _selectedIndex = index;
       });

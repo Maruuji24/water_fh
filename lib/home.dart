@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:water_fh/profile.dart';
 import 'reminder.dart';
+import 'package:water_fh/tips.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key); // เพิ่ม Key? key
@@ -23,10 +24,20 @@ class _HomePageState extends State<HomePage> {
   }
 
   void _onItemTapped(int index) {
-    if (index == 1) {
+    if(index==0){
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => HomePage()),
+      );
+    } else if (index == 1) {
       Navigator.push(
         context,
         MaterialPageRoute(builder: (context) => Reminder()),
+      );
+    } else if(index==2){
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => Tips()),
       );
     } else {
       setState(() {

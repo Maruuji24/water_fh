@@ -19,7 +19,6 @@ class _LoginScreenState extends State<LoginScreen> {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              //ทำให้ Logo แสดงหน่อยเพราะชั้นเพิ่มทุกอย่างแต่มันไม่แสดงรูปให้เบยย เศร้าอะฮือๆ 
               Container(
                 width: 150,
                 height: 150,
@@ -29,7 +28,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   borderRadius: BorderRadius.circular(10),
                 ),
                 child: Image.asset(
-                  "assets/image/logofh.png", //รูปภาพที่ไม่ขึ้น
+                  "assets/image/logofh.png", 
                   fit: BoxFit.cover,
                 ),
               ),
