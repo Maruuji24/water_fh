@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:water_fh/login.dart';
-import 'home.dart';
 
 class RegisterScreen extends StatefulWidget {
   @override
