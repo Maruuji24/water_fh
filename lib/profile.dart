@@ -76,9 +76,41 @@ class _ProfileState extends State<Profile> {
               style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 10),
-            CircleAvatar(
-              radius: 50,
-              backgroundImage: AssetImage('assets/image/doremon.jpg'),
+            Stack(
+              alignment: Alignment.center,
+              children: [
+                // วงกลมสีฟ้า (ขอบ)
+                Container(
+                  width: 110,
+                  height: 110,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    border: Border.all(color: Colors.blue, width: 4),
+                  ),
+                ),
+                // รูปโปรไฟล์
+                CircleAvatar(
+                  radius: 50,
+                  backgroundImage: AssetImage('assets/image/doremon.jpg'),
+                ),
+                // ไอคอนกล้อง
+                Positioned(
+                  bottom: 0,
+                  right: 0,
+                  child: Container(
+                    padding: EdgeInsets.all(4),
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      shape: BoxShape.circle,
+                    ),
+                    child: Icon(
+                      Icons.camera_alt,
+                      color: Colors.blue,
+                      size: 20,
+                    ),
+                  ),
+                ),
+              ],
             ),
             const SizedBox(height: 10),
             const Text(
@@ -204,19 +236,21 @@ class _ProfileState extends State<Profile> {
               },
             ),
             TextButton(
-            child: Text('ตกลง'),
-            onPressed: () {
-              Navigator.of(context).pop();  // ปิด Dialog
+              child: Text('ตกลง'),
+              onPressed: () {
+                Navigator.of(context).pop(); // ปิด Dialog
 
-              // เรียกใช้ฟังก์ชันออกจากระบบ
-              _logOut(context);
+                // เรียกใช้ฟังก์ชันออกจากระบบ
+                _logOut(context);
 
-              // หลังจากออกจากระบบแล้วไปที่หน้า Login
-              Navigator.pushReplacement(
-                context,
-                MaterialPageRoute(builder: (context) => LoginScreen()),  // เปลี่ยน LoginPage() ให้เป็นหน้าล็อกอินของคุณ
-              );
-            },
+                // หลังจากออกจากระบบแล้วไปที่หน้า Login
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) =>
+                          LoginScreen()), // เปลี่ยน LoginPage() ให้เป็นหน้าล็อกอินของคุณ
+                );
+              },
             ),
           ],
         );
